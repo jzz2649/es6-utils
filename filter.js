@@ -4,4 +4,4 @@
  *@return {function} [...args] 属性
  */
 
-const getV=(o)=>(...s)=>s.reduce((a,b)=>a?a[b]:''.u,o)
+const getV=o=>(...s)=>s.reduce((a,b)=>a?a[b]:''.u,o)
