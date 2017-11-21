@@ -14,7 +14,7 @@ const isBoolean = bool => type(bool) === '[object Boolean]'
 
 const isObject = obj => type(obj) === '[object Object]'
 
-const strIsEmpty = str => str.trim === ''
+const strIsEmpty = str => str.trim() === ''
 
 const objIsEmpty = obj => Object.keys(obj).length === 0
 
