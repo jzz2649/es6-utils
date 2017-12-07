@@ -6,6 +6,18 @@
 
 const getV=o=>(...s)=>s.reduce((a,b)=>a?a[b]:''.u,o)
 
+const getS = k => {
+  const s = window.location.search.split('?')[1];
+  const a = s ? s.split('&') : [];
+  const r = a.reduce((o, e) => {
+    const kv = e.split('=');
+    const k = kv[0];
+    if (kv.length > 1 && k) o[k] = kv[1];
+    return o;
+  }, {})
+  return k ? r[k] : r;
+}
+
 const filterV = o => {
   let v, d = o;
   if(isObject(o)){

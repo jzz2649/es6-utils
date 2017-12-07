@@ -1,1 +1,1 @@
-const compose=(...f)=>f.reduce((a,b)=>(...s)=>a(b(...s))))
+const compose=(...f)=>f.reduce((a,b)=>(...s)=>a(b(...s)))
