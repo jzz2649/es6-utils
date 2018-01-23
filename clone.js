@@ -4,12 +4,10 @@ const isArrays=(...s)=>s.reduce((a,b)=>a?Array.isArray(b):false,Array.isArray(s[
 
 const clone = o =>{
   let r = o;
-  if(isObject(o)){
-    r = {};
+  const set = () =>
     Object.keys(o).forEach(k=>r[k]=clone(o[k]))
-  }else if(Array.isArray(o)){
-    r = o.map(v=>clone(v))
-  }
+  if(isObject(o)) set(r={});
+  else if(Array.isArray(o)) set(r=[]);
   return r;
 }
 
