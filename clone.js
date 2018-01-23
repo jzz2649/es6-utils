@@ -14,12 +14,9 @@ const clone = o =>{
 const assign = (a,b) => {
   const x = clone(a);
   const y = clone(b);
-  if(isObjects(x,y)){
+  if(isObjects(x,y)||isArrays(x,y))
     Object.keys(y).forEach(k=>x[k]=assign(x[k],y[k]))
-  }else if(isArrays(x,y)){
-    y.forEach((v,i)=>x[i]=assign(x[i],v))
-  }else{
+  else
     return y;
-  }
   return x;
 }
