@@ -20,13 +20,11 @@ const getS = k => {
 
 const filterV = o => {
   let v, d = o;
-  const set = t => {
-    d = t;
+  const set = () =>
     Object.keys(o).forEach(k=>{
       if(!isEmpty(v=filterV(o[k])))d[k]=v
     });
-  }
-  if(isObject(o)) set({});
-  else if(isArray(o)) set([]);
+  if(isObject(o)) set(d={});
+  else if(isArray(o)) set(d=[]);
   return d;
 }
