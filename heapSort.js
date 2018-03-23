@@ -38,17 +38,13 @@ function heapSort(list){
     var tree = new Tree(list);
     return tree.get();
   }
+  var sortList = JSON.parse(JSON.stringify(list));
+  var result = [];
 
-  var index = list.length - 1;
-  var result = JSON.parse(JSON.stringify(list));
-  var sortList = [];
-
-  while(index > -1) {
-   sortList = sort(result.slice(0, index+1));
-   result = sortList.concat(result.slice(index+1))
-   result[0] = sortList[sortList.length-1];
-   result[index] = sortList[0];
-   index -= 1;
+  while(sortList.length) {
+   sortList = sort(sortList);
+   result.unshift(sortList.shift());
   }
+
   return result;
 }
