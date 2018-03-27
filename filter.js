@@ -6,6 +6,13 @@
 
 const getV=o=>(...s)=>s.reduce((a,b)=>a?a[b]:''.u,o)
 
+const getKV = (o, p) => {
+  for (const k in o) {
+    if (k === p) return o[k];
+    if (o[k] === p) return k;
+  }
+};
+
 const getS = k => {
   const s = window.location.search.split('?')[1];
   const a = s ? s.split('&') : [];
