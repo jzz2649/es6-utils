@@ -8,3 +8,20 @@ const throttle = (fn, wait) => {
     }
   }
 }
+
+const throttle = (fn, wait) => {
+  let timer = null;
+  let create = false;
+  let args = [];
+  return (...s) => {
+    args = s;
+    if(!create){
+      create = true;
+      if(timer) clearTimeout(timer);
+      timer = setTimeout(()=>{
+        create = false;
+        fn(...args);
+      }, wait);
+    }
+  }
+}
