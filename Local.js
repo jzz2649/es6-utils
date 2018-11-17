@@ -4,7 +4,7 @@ function Local(store){
   const event = [];
   const change = () => {
     event.forEach(fn => {
-      fn.call(storage, storage.getAll());
+      fn.call(storage, storage);
     })
   }
   const storage = {
