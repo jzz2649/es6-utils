@@ -12,7 +12,6 @@ function perf_interval(callback){
 		performance.clearMarks(end);
 		performance.clearMeasures(count);
 		return counts[0];
-		
 	}
 	callback(done);
 }
