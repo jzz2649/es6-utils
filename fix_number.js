@@ -26,5 +26,5 @@ function div(a, b){
 }
 function times(a, b){
   const [x, y, fix] = operate(a, b);
-  return x*y/fix;
+  return x*y/(fix*fix);
 }
