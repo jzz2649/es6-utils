@@ -3,7 +3,7 @@ function getFix(n){
   let f = Math.floor(n);
   while(f<n){
     if(f-n!==0){
-      const p = Number.EPSILON*fix;
+      const p = Number.EPSILON*fix*100;
       const min = Math.abs(f-n);
       const max = Math.abs(1-min);
       if(min<p){
